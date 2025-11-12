@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petal and Bow - Girl Accessories</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <h1>🌸 Petal & Bow 🎀</h1>
+                <p class="tagline">Where Elegance Meets Beauty</p>
+            </div>
+            <button id="cartBtn" onclick="toggleCart()">
+                <span class="cart-icon">🛒</span>
+                <span class="cart-text">My Cart</span>
+                <span class="cart-badge" id="cartCount">0</span>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-image">
+            <img src="assets/main.jpeg" alt="Petal & Bow Collection">
+        </div>
+        <div class="hero-content">
+            <h2 class="hero-title">Elevate Your Style</h2>
+            <p class="hero-subtitle">Discover our curated collection of exquisite accessories</p>
+            <p class="hero-description">From elegant bags to stunning jewelry, find the perfect pieces that express your unique beauty</p>
+            <button class="hero-btn" onclick="document.querySelector('.category-nav').scrollIntoView({behavior: 'smooth'})">
+                Shop Collection ✨
+            </button>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="feature-card">
+            <div class="feature-icon">💎</div>
+            <h3>Premium Quality</h3>
+            <p>Handpicked accessories with attention to detail</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🚚</div>
+            <h3>Fast Delivery</h3>
+            <p>Quick and secure shipping to your doorstep</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">💝</div>
+            <h3>Gift Ready</h3>
+            <p>Beautiful packaging for every occasion</p>
+        </div>
+    </section>
+
+    <nav class="category-nav">
+        <h2 class="section-heading">Shop by Category</h2>
+        <div class="category-buttons">
+            <button class="filter-btn active" data-category="all" onclick="filterProducts('all')">
+                <span class="icon">✨</span> All Products
+            </button>
+            <div id="categoryFilters"></div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div id="products" class="products-grid"></div>
+    </main>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content cart-modal">
+            <span class="close" onclick="toggleCart()">&times;</span>
+            <h2>🛍️ Shopping Cart</h2>
+            <div id="cartItems"></div>
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span class="amount">$<span id="cartTotal">0.00</span></span>
+                </div>
+                <button id="checkoutBtn" onclick="showCheckout()">
+                    Proceed to Checkout →
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content checkout-modal">
+            <span class="close" onclick="closeCheckout()">&times;</span>
+            <h2>💳 Checkout</h2>
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="customerName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="customerEmail" placeholder="your.email@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="customerPhone" placeholder="+91 XXXXX XXXXX" required>
+                </div>
+                <button type="submit" class="submit-btn">Place Order 🎉</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 Petal & Bow - Crafted with 💕</p>
+            <p class="footer-tagline">Your Destination for Beautiful Accessories</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
